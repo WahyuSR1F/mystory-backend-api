@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id    Int     @id @default(autoincrement())
+  name  String  @db.VarChar(50)
+  Story Story[]
+}
+
+model Story {
+  id         Int      @id @default(autoincrement()) //primary key
+  title      String   @db.VarChar(50)
+  author     String   @db.VarChar(30)
+  synopsis   String   @db.Text
+  categoryId Int
+  cover      String?
+  tags       String
+  status     Status
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  //relation
+  category Category @relation(fields: [categoryId], references: [id])
+}
+
+enum Status {
+  Publish
+  Draft
+}
