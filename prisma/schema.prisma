@@ -30,9 +30,22 @@ model Story {
 
   //relation
   category Category @relation(fields: [categoryId], references: [id])
+  Capter   Capter[]
 }
 
 enum Status {
   Publish
   Draft
+}
+
+model Capter {
+  id           Int      @id @default(autoincrement())
+  title_capter String
+  story_capter String   @db.Text
+  storyId      Int
+  createAt     DateTime @default(now())
+  updateAt     DateTime @updatedAt
+
+  //relation
+  story Story @relation(fields: [storyId], references: [id])
 }
