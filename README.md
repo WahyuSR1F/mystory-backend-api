@@ -30,6 +30,10 @@ The StoryKu application is one of the implementations of the serve-client proces
 ## Github Link
 
 - Fornted Link : https://github.com/WahyuSR1F/mystory-front
-- Backend Link :  
+- Backend Link : https://github.com/WahyuSR1F/mystory-backend-api.git
+
+# Video Presentation
+- https://youtu.be/nJWiesDw6Uc
+
 ## Author 
 by wahyu sahri rhamadhan
