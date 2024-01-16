@@ -1,4 +1,4 @@
-# StoryKu Backend Ekspress js
+# StoryKu Backend Express js
 
 ## Introduction
 
